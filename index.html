@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/app.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body >
+    
+<div>
+    <section id="header">
+        <nav class=" shadow-lg md:flex md:justify-between px-10 md:px-48 xl:px-64 ">
+			<div class="md:items-center md:justify-center mx-auto w-full">
+				<div class="flex justify-between ">
+					<div class="flex md:items-center w-full md:justify-between">
+						<div>
+							<!-- Website Logo -->
+							<a href="#" class="flex items-center py-4 px-2">
+								<img src="/media/Happy.png" alt="Logo" class="h-20">
+								
+							</a>
+						</div>
+						<!-- Primary Navbar items -->
+						<div class="hidden md:flex text-lg items-center gap-4">
+							<a href="/index.html" class="py-4 px-2 text-white hover:border-b-4 hover:border-blue-500 font-semibold ">Home</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:border-b-4 hover:border-blue-500 transition duration-300">Events</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:border-b-4 hover:border-blue-500 transition duration-300">About</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:border-b-4 hover:border-blue-500 transition duration-300">Contact Us</a>
+						</div>
+					</div>
+					<!-- Secondary Navbar items -->
+					
+					<!-- Mobile menu button -->
+					<div class="md:hidden flex items-center">
+						<button class="outline-none mobile-menu-button">
+						<svg class=" w-6 h-6 text-white hover:text-grey-100 "
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+					</div>
+				</div>
+			</div>
+			<!-- mobile menu -->
+			<div class="hidden mobile-menu text-white">
+				<ul class="">
+					<li ><a href="index.html" class="block text-lg px-2 py-4 text-white hover:bg-blue-500 font-semibold">Home</a></li>
+					<li><a href="#services" class="block text-lg px-2 py-4 hover:bg-blue-500 transition duration-300">Events</a></li>
+					<li><a href="#about" class="block text-lg px-2 py-4 hover:bg-blue-500 transition duration-300">About</a></li>
+					<li><a href="#contact" class="block text-lg px-2 py-4 hover:bg-blue-500 transition duration-300">Contact Us</a></li>
+				</ul>
+			</div>
+			<script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+		</nav>
+    </section>
+    <section id="hero">
+			
+		<div class='flex flex-col items-center justify-center p-10 md:pt-28'>
+            <video src="/media/introvid.mp4" class='flex xl:h-screen justify-center items-center xl:px-28 xl:py-10' autoPlay loop muted></video>
+                <div class='pt-10 md:py-5'>
+    			<button class="w-28 h-10 md:w-28 md:text-sm xl:w-36 xl:h-16 text-sm font-medium  rounded-full text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  text-center">Register Now</button>
+                </div>
+            </div>
+    </section>
+	<!-- ------------------------------Timer------------------------------ -->
+	<section id="timer">
+		<div id="headers" class="flex w-screen items-center justify-center" >
+			<div class="container flex w-screen px-20 py-7 flex-col items-center">
+			  <div class="countdown flex p-2 justify-center gap-5 w-72 md:w-32 xl:w-2/6 md:h-24 md:p-3" data-count="2022/12/14">
+				<div class="day ">
+				  <h3 style="color: white;font-family: sans-serif,Verdana;" class="days xl:text-xl font-bold">00</h3>
+				  <h4 style="color: white;font-family: sans-serif,Verdana;" class="text-sm md:text-lg">Days</h4>
+				</div>
+				<div class="day ">
+				  <h3 style="color: white;font-family: sans-serif,Verdana;" class="hrs xl:text-xl font-bold">00</h3>
+				  <h4 style="color: white;font-family: sans-serif,Verdana;" class="text-sm md:text-lg">Hours</h4>
+				</div>
+				<div class="day ">
+				  <h3 style="color: white;font-family: sans-serif,Verdana;" class="min xl:text-xl font-bold">00</h3>
+				  <h4 style="color: white;font-family: sans-serif,Verdana;" class="text-sm md:text-lg">Minutes</h4>
+				</div>
+				<div class="day ">
+				  <h3 style="color: white;font-family: sans-serif,Verdana;" class="sec xl:text-xl font-bold">00</h3>
+				  <h4 style="color: white;font-family: sans-serif,Verdana;" class="text-sm md:text-lg">Seconds</h4>
+				</div>
+			  </div>
+			</div>  
+		  </div>
+		  <script>
+			 const days = document.querySelector('.days');
+	var countDownDate = new Date("Nov 23, 2022 09:00:00").getTime();
+
+// Update the count down every 1 second
+	var x = setInterval(function() {
+
+  // Get today's date and time
+  	var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  	var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		
+  // Output the result in an element with id="demo"
+  // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  	// + minutes + "m " + seconds + "s ";
+    //console.log(days,hours,minutes,seconds);
+   document.querySelector('.days').innerHTML = days;
+  	 document.querySelector('.hrs').innerHTML = hours;
+   document.querySelector('.min').innerHTML = minutes;
+   document.querySelector('.sec').innerHTML = seconds;
+  	// If the count down is over, write some text 
+  	if (distance < 0) {
+  	  clearInterval(x);
+  	  document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+},);
+		  </script>
+	</section>
+
+
+
+
+	<section id="About">
+		<div class="flex flex-col items-center py-10">
+			<div class="new py-10 flex flex-col  border border-white w-5/6 xl:w-4/6">
+				<h1 class="text-white text-center  text-2xl xl:text-4xl font-bold">CoCo-Enz'22</h1>
+				<p class="text-gray-500 text-center py-5 px-10 xl:py-16 xl:px-64 xl:text-xl">
+					CoCo-Enz'22 is a National Level Techfest conducted by the Department of Computer and Communication Engineering at Sri Sairam Institute of Technology, Chennai. It is the culmination of the nation's best young minds in a contest of innovative thinking. Get ready to have a blast on 23rd, November, 2022 with our wide range of events!
+				</p>
+			</div>
+			<div class="new py-10 my-10 flex flex-col border border-white w-5/6 xl:w-4/6">
+			<h1 class="text-white text-center text-sm xl:text-4xl font-bold">Dept of Computer & Communication Engineering</h1>
+			<p class="text-gray-500 text-center py-5 px-10 xl:py-16 xl:px-64 xl:text-xl">The Newfangled Department of Computer and communication Engineering aims to equip the students with the ability and skills to analyze, design and develop computer and communication systems with its applications, with a curriculum that has a balanced emphasis on theory, practical and projects. The focus will be on development and strengthening of  problem solving, analysis, design, research, team work and communication skills,
+
+				Department provides an opportunity of enriching the knowledge  in areas of Artificial Intelligence, Machine Learning,  Cloud Computing, Computer Networks, Embedded Systems, Internet of Things, Fundamental and advanced communication engineering.
+				
+				The courses run by the Department will use mixed techniques of interactive lectures, tutorials, laboratory work which includes cloud and analytics lab, Antenna lab, Artificial intelligence lab Networking lab ,Advanced communication lab and project work that require team work and creative thinking.</p>
+			</div>
+			<div class="new py-10 my-10 flex flex-col border border-white w-5/6 xl:w-4/6">
+				<h1 class="text-white text-center text-sm xl:text-4xl font-bold">Sri Sairam Institute of Technology</h1>
+				<p class="text-gray-500 text-center py-5 px-10 xl:py-16 xl:px-64 xl:text-xl">Sri Sai Ram Institute of Technology, an autonomous institution, is one of the honoured institutions, 
+					which stands as a sinew of splendour in the arena of education for a decade. 
+					This non-profitable and non-minority institution thrives tremendous opportunities
+					 parallel with many of the leading professional colleges across the country. Further, this prodigious institution is located in South Chennai, near the well-known fascinating Theme Park, “Kishkinta”. The Founder Chairman of this institution, MJF.Ln.LEO MUTHU, the Managing Director of LEO GROUP OF COMPANIES was an Indian philanthropist, educationist and businessman. As a philanthropist, he was a generous contributor to educational funding and scholarships for school and college students. In order to serve the society, particularly in the field of education, he founded the educational trusts with a motto “To build a better nation through quality education.” The groups of colleges under the trusts offer education across technical, management studies, research, shipping science and alternative medicine streams and more</p></div>
+		</div>
+	</section>
+
+
+	<section id="flip">
+		<div >
+			<h1 class='text-white xl:text-5xl text-3xl p-10 text-center'>Technical Events</h1>
+			<section class='xl:grid xl:grid-cols-3 xl:px-48 pl-5 xl:pl-64 gap-16 py-10'>
+			<div
+			  class="flex xl:w-[400px]  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/Event1.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-2xl  font-semibold">Flash Anzan</h1>
+					
+					<p class="py-10 px-3">
+						A non tech based tech event..technical skills can be acquired by this event which is completely required to placements and to make it more interactive energetic non tech rounds are included... ipsum dolor sit amet consectetur adipisicing elit. Facilis
+					  itaque assumenda saepe animi maxime libero non quasi, odit natus
+					  veritatis enim culpa nam inventore doloribus quidem temporibus
+					  amet velit accusamus.
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+					>
+						<a href='/flash.html' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+	
+			<div
+			  class="flex xl:w-[400px]  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective xl:pt-0 pt-10"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/ErrZone.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-2xl  font-semibold">Err.Zone</h1>
+					
+					<p>
+						Come out and show your coding skills to the world and take the cash prize home.
+						Disclaimer: Stealing will not be easy 😉
+						And .... A surprise waits for you in the final round
+					</p>
+					<button
+					class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+				  >
+					  <a href='/errz.html' >Register Now</a>  
+				  </button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+	
+	
+			<div
+			  class="flex xl:w-[400px]  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective xl:pt-0 mt-10"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/UXPLORER.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-2xl  font-semibold">UXPLORER</h1>
+					<p class="py-2">9.0 Rating</p>
+					<p>
+						Designing with constraints and beauty requires a pellucid mindset. 
+						Poster Designing and UI/UX designing 
+						Y'all come join us to astonish the world with all your bewildering designs...
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+					>
+						<a href='/' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+		  </section>
+		  <div class=" xl:pl-[47.5rem] pl-5">
+		  <div
+			  class="flex xl:w-[400px] w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective xl:pt-0 mt-10"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/PresentUrs.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-2xl  font-semibold">Present Urs</h1>
+					<p class="py-2">9.0 Rating</p>
+					<p>
+						Greetings amigos!! PresentUrs is a technical event in which you all can present your projects and showcase ur innovations……..
+						Get here and presentUrs 😌
+						Excel⚡
+						𝙀𝙫𝙚𝙧𝙮 𝙥𝙧𝙤𝙟𝙚𝙘𝙩 𝙞𝙨 𝙖𝙣 𝙤𝙥𝙥𝙤𝙧𝙩𝙪𝙣𝙞𝙩𝙮 𝙩𝙤 𝙡𝙚𝙖𝙧𝙣, 𝙩𝙤 𝙛𝙞𝙜𝙪𝙧𝙚 𝙤𝙪𝙩 𝙥𝙧𝙤𝙗𝙡𝙚𝙢𝙨 𝙖𝙣𝙙 𝙘𝙝𝙖𝙡𝙡𝙚𝙣𝙜𝙚𝙨, 𝙩𝙤 𝙞𝙣𝙫𝙚𝙣𝙩 𝙖𝙣𝙙 𝙧𝙚𝙞𝙣𝙫𝙚𝙣𝙩 !!
+						
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+					>
+						<a href='/' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+			</div>
+	
+	
+		  <h1  class='text-white xl:text-5xl text-3xl p-10 text-center'>Non-Technical Events</h1>
+		  <section class='xl:grid xl:grid-cols-3 xl:px-48 pl-5 xl:pl-64 gap-16 py-10'>
+			<div
+			  class="flex xl:w-[400px] mt-10  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/OPERAHOUSE.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-3xl  font-semibold">OPERA HOUSE</h1>
+					<p class="py-2">9.0 Rating</p>
+					<p>
+						“Music is aid in the recovery of a wrecked soul.”
+						Opera House is a fun filled musical event, where the participants will be filtered based on their musical talent and knowledge through plethora of rounds  "DJ elaam vechu
+						Seivom atrocity thaan"
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+					>
+						<a href='/' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+
+			<div
+			  class="flex xl:w-[400px]  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective mt-10"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/FunHub.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-3xl  font-semibold">FunHub</h1>
+					<p class="py-2">9.0 Rating</p>
+					<p>
+						LET'S THE REAL FUN BEGINSS..... 
+						FUN HUB is the event where the funny and cool games will be played. And the participants will be filtered according to their skills in craziness and funniness. 
+						LET'S GATHER AND HAVE FUN IN FUN HUB>
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16 scale-0 group-hover:scale-125"
+					>
+						<a href='/' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+			
+
+			<div
+			  class="flex xl:w-[400px]  w-[330px] h-[500px] xl:h-[500px] items-center justify-center text-center bg-transparent cursor-pointer group perspective mt-10"
+			>
+			  <div
+				class="flex text-center relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000"
+			  >
+				<div class="absolute backface-hidden border-2 w-full h-full">
+				  <img src="/media/nosta.png" class="w-full h-full" />
+				</div>
+				<div
+				  class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-gray-100 overflow-hidden"
+				>
+				  <div
+					class="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-12 xl:pb-24"
+				  >
+					<h1 class="xl:text-3xl text-3xl  font-semibold">Nostalgia</h1>
+					
+					<p class="px-6 py-5">
+						A cartoon quiz, where you will  be asked to take part in a vivacious quiz entity. There will be many rounds through which the participants must potray their cartoon knowledge. If u r a marvel, simpsons, spongebobs... Then, this events is just for you.
+					</p>
+					<button
+					  class=" w-28 h-10 text-xs md:w-28 md:text-sm xl:text-md xl:w-28 xl:h-10 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800  font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-16  scale-0 group-hover:scale-125"
+					>
+						<a href='/' >Register Now</a>  
+					</button>
+				  </div>
+				</div>
+			  </div>
+			  
+			</div>
+			
+			</section>
+		  </div>
+	</section>
+
+
+
+	<section id="team">
+		<h1 class="text-white text-5xl py-10 text-center">Faculty Members</h1>
+		<div class='xl:grid xl:grid-cols-3 xl:px-48 pl-5 xl:pl-64 gap-16 py-10'>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/akilamam.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Ms. Akilandasowmya</h1>
+					<p class="text-white font-bold">Event Coordinator</p>
+				</div>
+			</div>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/akilamam.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Ms. Akilandasowmya</h1>
+					<p class="text-white font-bold">Event Coordinator</p>
+				</div>
+			</div>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/akilamam.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Ms. Akilandasowmya</h1>
+					<p class="text-white font-bold">Event Coordinator</p>
+				</div>
+			</div>
+		</div>
+		<h1 class="text-white text-5xl py-10 text-center">Office Bearers</h1>
+		<div class='xl:grid xl:grid-cols-3 xl:px-48 pl-5 xl:pl-64 gap-16 py-10'>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/thilak.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Thilak Shankar V</h1>
+					<p class="text-white font-bold">Chairman</p>
+				</div>
+			
+			</div>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/vice.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Sudan R</h1>
+					<p class="text-white font-bold">Vice Chairman</p>
+				</div>
+			
+			</div>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/sec.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Thanushri T</h1>
+					<p class="text-white font-bold">Secertary</p>
+				</div>
+			
+			</div>
+		</div>
+		<div class='xl:grid xl:grid-cols-2 xl:px-16 pl-5 xl:pl-96 gap-10 py-10'>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/vicesec.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Rindhiya</h1>
+					<p class="text-white font-bold">Vice Secertary</p>
+				</div>
+			
+			</div>
+			<div class="new xl:w-96 w-80 p-10 flex flex-col gap-4 items-center justify-center mt-10">
+				<img src="/media/treas.jpg" class="rounded-full w-64  h-64">
+				<div class="text-center">
+					<h1 class="text-white font-bold text-2xl">Divya E</h1>
+					<p class="text-white font-bold">Treasurer</p>
+				</div>
+			
+			</div>
+			
+		</div>
+		<div class="flex flex-col py-10 text-white items-center justify-center">
+			<h1 class="md:text-5xl text-3xl font-bold text-white">Committiee Members</h1>
+			<div class="flex">
+				<ul class="list-disc list-inside text-2xl text-gray-400 p-10">
+				<li>Karthik B - Website Handler</li>
+				<li>Karthik B - Website Handler</li>
+				<li>Kishore Kumar S - Video Editor</li>	
+				<li>Sathish S - Video Editor</li>
+				<li>Jiffy Renissa - Media Designer</li>
+				</ul>	
+				<ul class="list-disc list-inside text-2xl text-gray-400 p-10">
+				
+				
+					<li>	Manthra - Media Designer</li>
+					<li>	Karthik B - Media Designer</li>
+					<li>	Jaiesh - Sound Designer</li>
+					<li>Aravindh T S - Registration</li>
+					<li>Sukeeshwaran - Social Media Handler</li>
+				</ul>
+			</div>
+			
+		</div>
+	</section>
+	<section id="footer">
+		<div>
+			
+		</div>
+	</section>
+</div>
+</body>
+</html>
