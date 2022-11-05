@@ -1,5 +1,7 @@
 body{
     background-color: #10121D;
+    overflow-x: hidden;
+    height: 100%;
 }
 #header{
     background: linear-gradient(180deg,#fff -100.72%,rgba(0,0,0,0) 100.19%);
